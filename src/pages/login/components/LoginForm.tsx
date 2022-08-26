@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { Button, Form, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { UserOutlined, LockOutlined, CloseCircleOutlined } from "@ant-design/icons";
+import md5 from "js-md5";
+
 import { Login } from "@/api/interface";
 import { loginApi } from "@api/login";
 import { HOME_URL } from "@/config/config";
-import { useTranslation } from "react-i18next";
 import { setTabsList } from "@/store/modules/tabs";
 import { setToken } from "@/store/modules/global";
 import { useDispatch } from "@/store";
-import { UserOutlined, LockOutlined, CloseCircleOutlined } from "@ant-design/icons";
-import md5 from "js-md5";
 
 const LoginForm = () => {
 	const dispatch = useDispatch();
@@ -24,7 +25,6 @@ const LoginForm = () => {
 			setLoading(true);
 			loginForm.password = md5(loginForm.password);
 			const { data } = await loginApi(loginForm);
-			return false;
 			dispatch(setToken(data!.access_token));
 			dispatch(setTabsList([]));
 			message.success("登录成功！");
