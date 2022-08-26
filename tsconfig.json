@@ -30,7 +30,13 @@
 		// 模块名到基于 baseUrl的路径映射的列表。
 		"paths": {
 			"@": ["src"],
-			"@/*": ["src/*"]
+			"@/*": ["src/*"],
+			"@components": ["src/components"],
+			"@components/*": ["src/components/*"],
+			"@api": ["src/api/modules"],
+			"@api/*": ["src/api/modules/*"],
+			"@utils": ["src/utils"],
+			"@utils/*": ["src/utils/*"],
 		}
 	},
 	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "vite.config.ts"],

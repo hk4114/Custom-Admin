@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button, Form, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
 import { Login } from "@/api/interface";
-import { loginApi } from "@/api/modules/login";
+import { loginApi } from "@api/login";
 import { HOME_URL } from "@/config/config";
 import { useTranslation } from "react-i18next";
 import { setTabsList } from "@/store/modules/tabs";
@@ -24,6 +24,7 @@ const LoginForm = () => {
 			setLoading(true);
 			loginForm.password = md5(loginForm.password);
 			const { data } = await loginApi(loginForm);
+			return false;
 			dispatch(setToken(data!.access_token));
 			dispatch(setTabsList([]));
 			message.success("登录成功！");

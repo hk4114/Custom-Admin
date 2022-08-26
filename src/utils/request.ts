@@ -1,16 +1,17 @@
 import NProgress from "@/config/nprogress";
 import axios, { AxiosInstance, AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
+import { message } from "antd";
 import { showFullScreenLoading, tryHideFullScreenLoading } from "@/config/serviceLoading";
 import { ResultData } from "@/api/interface";
 import { ResultEnum } from "@/enums/httpEnum";
-import { checkStatus } from "./helper/checkStatus";
-import { AxiosCanceler } from "./helper/axiosCancel";
+import { checkStatus } from "./commons/checkStatus";
+import { AxiosCanceler } from "./commons/axiosCancel";
 import { setToken } from "@/store/modules/global";
-import { message } from "antd";
 import { store } from "@/store";
 
 const axiosCanceler = new AxiosCanceler();
 
+// 请求相关的配置
 const config = {
 	// 默认地址请求地址，可在 .env 开头文件中修改
 	baseURL: import.meta.env.VITE_API_URL as string,

@@ -1,15 +1,20 @@
 import { useState, useEffect } from "react";
-import { getBrowserLang } from "@/utils/util";
 import { ConfigProvider } from "antd";
-import { setLanguage } from "@/store/modules/global";
 import { HashRouter } from "react-router-dom";
-import { RootState, useDispatch, useSelector } from "@/store";
-import AuthRouter from "@/routers/utils/authRouter";
+import i18n from "i18next";
+
 import Router from "@/routers/index";
+import AuthRouter from "@/routers/utils/authRouter";
+
+import { setLanguage } from "@/store/modules/global";
+import { RootState, useDispatch, useSelector } from "@/store";
+
+import { getBrowserLang } from "@/utils/util";
+
 import useTheme from "@/hooks/useTheme";
+
 import zhCN from "antd/lib/locale/zh_CN";
 import enUS from "antd/lib/locale/en_US";
-import i18n from "i18next";
 import "moment/dist/locale/zh-cn";
 
 const App = () => {

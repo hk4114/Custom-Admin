@@ -1,13 +1,12 @@
 import { useRef } from "react";
 import { Avatar, Modal, Menu, Dropdown, message } from "antd";
-import { ExclamationCircleOutlined } from "@ant-design/icons";
+import { ExclamationCircleOutlined, UserOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { HOME_URL } from "@/config/config";
 import { useDispatch } from "@/store";
 import { setToken } from "@/store/modules/global";
 import PasswordModal from "./PasswordModal";
 import InfoModal from "./InfoModal";
-import avatar from "@/assets/images/avatar.png";
 
 const AvatarIcon = () => {
 	const dispatch = useDispatch();
@@ -68,7 +67,7 @@ const AvatarIcon = () => {
 	return (
 		<>
 			<Dropdown overlay={menu} placement="bottom" arrow trigger={["click"]}>
-				<Avatar size="large" src={avatar} />
+				<Avatar size="large" icon={<UserOutlined />} />
 			</Dropdown>
 			<InfoModal innerRef={infoRef}></InfoModal>
 			<PasswordModal innerRef={passRef}></PasswordModal>

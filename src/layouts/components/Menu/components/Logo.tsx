@@ -1,5 +1,4 @@
 import logo from "@/assets/images/logo.png";
-
 const Logo = ({ isCollapse }: { isCollapse: boolean }) => {
 	return (
 		<div className="logo-box">

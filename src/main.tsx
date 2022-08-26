@@ -1,4 +1,4 @@
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import "@/styles/reset.less";
 import "antd/dist/antd.less";
 import "@/styles/common.less";
@@ -8,11 +8,12 @@ import { Provider } from "react-redux";
 import { store, persistor } from "@/store";
 import App from "@/App";
 
-ReactDOM.render(
+const root = createRoot(document.getElementById("root")!);
+
+root.render(
 	<Provider store={store}>
 		<PersistGate persistor={persistor}>
 			<App />
 		</PersistGate>
-	</Provider>,
-	document.getElementById("root")
+	</Provider>
 );

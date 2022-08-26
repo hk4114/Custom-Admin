@@ -1,5 +1,3 @@
-import "./index.less";
-
 const Juejin = () => {
 	return (
 		<div className="content-box">

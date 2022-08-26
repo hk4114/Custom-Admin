@@ -20,18 +20,18 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 		resolve: {
 			alias: {
 				"@": resolve("./src"),
-				"@components": resolve("src/components"),
-				"@services": resolve("src/services"),
-				"@utils": resolve("src/utils")
+				"@components": resolve("./src/components"),
+				"@api": resolve("./src/api/modules"),
+				"@utils": resolve("./src/utils")
 			}
 		},
 		// global css
 		css: {
 			preprocessorOptions: {
 				less: {
-					// modifyVars: {
-					// 	"primary-color": "#1DA57A",
-					// },
+					modifyVars: {
+						"primary-color": "#1DA57A"
+					},
 					javascriptEnabled: true,
 					additionalData: `@import "@/styles/var.less";`
 				}
@@ -66,6 +66,7 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 			// * EsLint 报错信息显示在浏览器界面上
 			eslintPlugin(),
 			// * 是否生成包预览
+			// @ts-ignore
 			viteEnv.VITE_REPORT && visualizer(),
 			// * gzip compress
 			viteEnv.VITE_BUILD_GZIP &&

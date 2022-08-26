@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import { getAuthorButtons } from "@/api/modules/login";
+import { getAuthorButtons } from "@api/login";
 
 const DataScreen = () => {
 	const requestMenuList = async () => {
