@@ -22,7 +22,7 @@ const LayoutHeader = () => {
 				<Language />
 				<Theme />
 				<Fullscreen />
-				<span className="username">Hooks</span>
+				<span className="username">admin</span>
 				<AvatarIcon />
 			</div>
 		</Header>

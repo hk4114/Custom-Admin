@@ -1,3 +1,4 @@
+import * as React from "react";
 const toString = Object.prototype.toString;
 
 /**
@@ -60,20 +61,6 @@ export function isPromise<T = any>(val: unknown): val is Promise<T> {
 }
 
 /**
- * @description:  是否为字符串
- */
-export function isString(val: unknown): val is string {
-	return is(val, "String");
-}
-
-/**
- * @description:  是否为boolean类型
- */
-export function isBoolean(val: unknown): val is boolean {
-	return is(val, "Boolean");
-}
-
-/**
  * @description:  是否为数组
  */
 export function isArray(val: any): val is Array<any> {
@@ -100,7 +87,9 @@ export const isElement = (val: unknown): val is Element => {
 
 export const isServer = typeof window === "undefined";
 
-// 是否为图片节点
+/**
+ * @description: 是否为图片节点
+ */
 export function isImageDom(o: Element) {
 	return o && ["IMAGE", "IMG"].includes(o.tagName);
 }
@@ -115,4 +104,51 @@ export function isNullAndUnDef(val: unknown): val is null | undefined {
 
 export function isNullOrUnDef(val: unknown): val is null | undefined {
 	return isUnDef(val) || isNull(val);
+}
+
+export function isReactMemo(
+	Component: React.MemoExoticComponent<React.ComponentType<any>> | React.FunctionComponent
+): Component is React.MemoExoticComponent<React.ComponentType<any>> {
+	return typeof Component !== "function" && !!Component["$$typeof"];
+}
+
+export function isComponentClass<T>(Component: React.ComponentClass<T>): Component is React.ComponentClass<T> {
+	return Component.prototype && Component.prototype.render;
+}
+
+/**
+ * @description: 是否邮箱地址
+ */
+export function isEmail(val: string) {
+	const reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/g;
+	if (reg.test(val)) return true;
+}
+
+/**
+ * @description: 是否是手机号
+ */
+export const isTelphone = (val: string) => {
+	const reg = /^((\+|00)86)?1[3-9]\d{9}$/g;
+	if (reg.test(val)) return true;
+};
+
+/**
+ * @description 是否是中文
+ */
+export const isChinese = (val: string) => /^[\u4E00-\u9FA5]+$/g.test(val);
+
+/**
+ * @description 判断数据是否为空（包括空对象，空数组）
+ */
+export function isEmpty(data: unknown) {
+	if (data === undefined || data === null || data === 0 || data === "") {
+		return true;
+	}
+	if (Array.isArray(data)) {
+		return data.length === 0;
+	}
+	if (typeof data === "object") {
+		return Object.keys(data).length === 0;
+	}
+	return false;
 }

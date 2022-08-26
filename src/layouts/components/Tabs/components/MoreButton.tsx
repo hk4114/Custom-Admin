@@ -1,8 +1,8 @@
 import { Button, Dropdown, Menu } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import { useLocation, useNavigate } from "react-router-dom";
-import { setTabsList } from "@/redux/modules/tabs";
-import { RootState, useDispatch, useSelector } from "@/redux";
+import { setTabsList } from "@/store/modules/tabs";
+import { RootState, useDispatch, useSelector } from "@/store";
 import { useTranslation } from "react-i18next";
 import { HOME_URL } from "@/config/config";
 

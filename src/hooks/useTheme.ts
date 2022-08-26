@@ -1,4 +1,4 @@
-import { RootState, useSelector } from "@/redux";
+import { RootState, useSelector } from "@/store";
 
 /**
  * @description 全局主题设置

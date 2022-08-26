@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { getBrowserLang } from "@/utils/util";
 import { ConfigProvider } from "antd";
-import { setLanguage } from "@/redux/modules/global";
+import { setLanguage } from "@/store/modules/global";
 import { HashRouter } from "react-router-dom";
-import { RootState, useDispatch, useSelector } from "@/redux";
+import { RootState, useDispatch, useSelector } from "@/store";
 import AuthRouter from "@/routers/utils/authRouter";
 import Router from "@/routers/index";
 import useTheme from "@/hooks/useTheme";

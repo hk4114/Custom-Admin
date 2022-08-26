@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { Layout } from "antd";
-import { setAuthButtons } from "@/redux/modules/auth";
-import { updateCollapse } from "@/redux/modules/menu";
+import { setAuthButtons } from "@/store/modules/auth";
+import { updateCollapse } from "@/store/modules/menu";
 import { getAuthorButtons } from "@/api/modules/login";
-import { RootState, useDispatch, useSelector } from "@/redux";
+import { RootState, useDispatch, useSelector } from "@/store";
 import LayoutMenu from "./components/Menu";
 import LayoutHeader from "./components/Header";
 import LayoutTabs from "./components/Tabs";

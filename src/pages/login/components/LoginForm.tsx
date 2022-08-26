@@ -5,9 +5,9 @@ import { Login } from "@/api/interface";
 import { loginApi } from "@/api/modules/login";
 import { HOME_URL } from "@/config/config";
 import { useTranslation } from "react-i18next";
-import { setTabsList } from "@/redux/modules/tabs";
-import { setToken } from "@/redux/modules/global";
-import { useDispatch } from "@/redux";
+import { setTabsList } from "@/store/modules/tabs";
+import { setToken } from "@/store/modules/global";
+import { useDispatch } from "@/store";
 import { UserOutlined, LockOutlined, CloseCircleOutlined } from "@ant-design/icons";
 import md5 from "js-md5";
 

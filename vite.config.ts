@@ -1,11 +1,13 @@
 import { defineConfig, loadEnv, ConfigEnv, UserConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { resolve } from "path";
+import path from "path";
 import { wrapperEnv } from "./src/utils/getEnv";
 import { visualizer } from "rollup-plugin-visualizer";
 import { createHtmlPlugin } from "vite-plugin-html";
 import viteCompression from "vite-plugin-compression";
 import eslintPlugin from "vite-plugin-eslint";
+
+const resolve = (dir: string) => path.resolve(__dirname, dir);
 
 // @see: https://vitejs.dev/config/
 export default defineConfig((mode: ConfigEnv): UserConfig => {
@@ -17,7 +19,10 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 		// alias config
 		resolve: {
 			alias: {
-				"@": resolve(__dirname, "./src")
+				"@": resolve("./src"),
+				"@components": resolve("src/components"),
+				"@services": resolve("src/services"),
+				"@utils": resolve("src/utils")
 			}
 		},
 		// global css

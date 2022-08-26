@@ -1,6 +1,6 @@
 import { Dropdown, Menu } from "antd";
-import { RootState, useDispatch, useSelector } from "@/redux";
-import { setLanguage } from "@/redux/modules/global";
+import { RootState, useDispatch, useSelector } from "@/store";
+import { setLanguage } from "@/store/modules/global";
 
 const Language = () => {
 	const dispatch = useDispatch();

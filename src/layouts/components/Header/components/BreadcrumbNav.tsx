@@ -1,7 +1,7 @@
 import { Breadcrumb } from "antd";
 import { useLocation } from "react-router-dom";
 import { HOME_URL } from "@/config/config";
-import { RootState, useSelector } from "@/redux";
+import { RootState, useSelector } from "@/store";
 
 const BreadcrumbNav = () => {
 	const { pathname } = useLocation();

@@ -1,6 +1,6 @@
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import { RootState, useDispatch, useSelector } from "@/redux";
-import { updateCollapse } from "@/redux/modules/menu";
+import { RootState, useDispatch, useSelector } from "@/store";
+import { updateCollapse } from "@/store/modules/menu";
 
 const CollapseIcon = () => {
 	const dispatch = useDispatch();

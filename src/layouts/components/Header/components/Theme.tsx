@@ -1,8 +1,8 @@
 import { Drawer, Divider, Switch, message } from "antd";
 import { useState } from "react";
-import { RootState, useDispatch, useSelector } from "@/redux";
+import { RootState, useDispatch, useSelector } from "@/store";
 import { FireOutlined } from "@ant-design/icons";
-import { setWeakOrGray } from "@/redux/modules/global";
+import { setWeakOrGray } from "@/store/modules/global";
 
 const Theme = () => {
 	const dispatch = useDispatch();

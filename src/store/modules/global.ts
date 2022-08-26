@@ -1,4 +1,4 @@
-import { GlobalState } from "@/redux/interface";
+import { GlobalState } from "@/store/interface";
 import type { SizeType } from "antd/lib/config-provider/SizeContext";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
