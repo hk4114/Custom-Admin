@@ -1,14 +1,16 @@
-import NProgress from "@utils/request/nprogress";
 import axios, { AxiosInstance, AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 import { message } from "antd";
+
 import { showFullScreenLoading, tryHideFullScreenLoading } from "./fullScreenLoading";
-import { ResultData } from "@/api/interface";
-import { ResultEnum } from "@utils/commons/consts";
 import { checkStatus } from "./checkStatus";
 import { AxiosCanceler } from "./axiosCancel";
+import { tokenGet, tokenSet } from "./auth";
+import NProgress from "./nprogress";
+
+import { ResultData } from "@/api/interface";
+import { ResultEnum } from "@utils/commons/consts";
 import { setToken } from "@/store/modules/global";
 import { store } from "@/store";
-import { tokenGet, tokenSet } from "./auth";
 
 const axiosCanceler = new AxiosCanceler();
 

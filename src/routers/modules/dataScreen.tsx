@@ -1,6 +1,6 @@
 import React from "react";
 import lazyLoad from "@/routers/utils/lazyLoad";
-import Layout from "@/layouts/index";
+import Layout from "@/layouts";
 import { RouteObject } from "@/routers/interface";
 
 // 数据大屏模块
@@ -9,8 +9,8 @@ const dataScreenRouter: Array<RouteObject> = [
 		element: <Layout />,
 		children: [
 			{
-				path: "/dataScreen/index",
-				element: lazyLoad(React.lazy(() => import("@/pages/dataScreen/index"))),
+				path: "/dataScreen",
+				element: lazyLoad(React.lazy(() => import("@/pages/dataScreen"))),
 				meta: {
 					requiresAuth: true,
 					title: "数据大屏",

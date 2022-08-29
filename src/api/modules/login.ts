@@ -21,5 +21,5 @@ export const getAuthorButtons = () => {
 
 // * 获取菜单列表
 export const getMenuList = () => {
-	return request.get<Menu.MenuOptions[]>(`/hooks/menu/list`);
+	return request.get<Menu.MenuOptions[]>(`https://mock.mengxuegu.com/mock/630c3c54c94098684fb183d3/example/menu`);
 };
