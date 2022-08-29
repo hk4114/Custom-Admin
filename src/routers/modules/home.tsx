@@ -1,5 +1,3 @@
-// import React from "react";
-// import lazyLoad from "@/routers/util/lazyLoad";
 import Layout from "@/layouts/index";
 import { RouteObject } from "@/routers/interface";
 import Home from "@/pages/home/index";
@@ -11,7 +9,6 @@ const homeRouter: Array<RouteObject> = [
 		children: [
 			{
 				path: "/home/index",
-				// element: lazyLoad(React.lazy(() => import("@/pages/home/index"))),
 				element: <Home />,
 				meta: {
 					requiresAuth: true,

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { HOME_URL } from "@/config/config";
 import { useDispatch } from "@/store";
 import { setToken } from "@/store/modules/global";
+import { tokenSet } from "@utils/auth";
 import PasswordModal from "./PasswordModal";
 import InfoModal from "./InfoModal";
 
@@ -28,6 +29,7 @@ const AvatarIcon = () => {
 			cancelText: "取消",
 			onOk: () => {
 				dispatch(setToken(""));
+				tokenSet("");
 				message.success("退出登录成功！");
 				navigate("/login");
 			}
