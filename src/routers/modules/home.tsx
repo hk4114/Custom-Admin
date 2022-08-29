@@ -8,7 +8,7 @@ const homeRouter: Array<RouteObject> = [
 		element: <Layout />,
 		children: [
 			{
-				path: "/home/index",
+				path: "/",
 				element: <Home />,
 				meta: {
 					requiresAuth: true,

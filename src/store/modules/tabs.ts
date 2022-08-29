@@ -1,5 +1,5 @@
 import { TabsState } from "@/store/interface";
-import { HOME_URL } from "@/config/config";
+import { HOME_URL } from "@/config";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const tabsState: TabsState = {

@@ -1,9 +1,9 @@
 import { useLocation, Navigate } from "react-router-dom";
 import { searchRoute } from "@/utils/util";
 import { rootRouter } from "@/routers/index";
-import { HOME_URL } from "@/config/config";
+import { HOME_URL } from "@/config";
 import { RootState, useSelector } from "@/store";
-import { tokenGet } from "@/utils/auth";
+import { tokenGet } from "@/utils/request/auth";
 
 /**
  * @description 路由守卫组件

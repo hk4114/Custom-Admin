@@ -2,7 +2,7 @@ import { Tabs, message } from "antd";
 import { HomeFilled } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { HOME_URL } from "@/config/config";
+import { HOME_URL } from "@/config";
 import { setTabsList } from "@/store/modules/tabs";
 import { RootState, useDispatch, useSelector } from "@/store";
 import { routerArray } from "@/routers";

@@ -7,10 +7,10 @@ import md5 from "js-md5";
 
 import { Login } from "@/api/interface";
 import { loginApi } from "@api/login";
-import { HOME_URL } from "@/config/config";
+import { HOME_URL } from "@/config";
 import { setTabsList } from "@/store/modules/tabs";
 import { setToken } from "@/store/modules/global";
-import { tokenSet } from "@utils/auth";
+import { tokenSet } from "@/utils/request/auth";
 import { useDispatch } from "@/store";
 
 const LoginForm = () => {

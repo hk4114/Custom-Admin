@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { setTabsList } from "@/store/modules/tabs";
 import { RootState, useDispatch, useSelector } from "@/store";
 import { useTranslation } from "react-i18next";
-import { HOME_URL } from "@/config/config";
+import { HOME_URL } from "@/config";
 
 const MoreButton = (props: any) => {
 	const dispatch = useDispatch();
