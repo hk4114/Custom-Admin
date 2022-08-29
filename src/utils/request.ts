@@ -3,7 +3,7 @@ import axios, { AxiosInstance, AxiosError, AxiosRequestConfig, AxiosResponse } f
 import { message } from "antd";
 import { showFullScreenLoading, tryHideFullScreenLoading } from "@/config/serviceLoading";
 import { ResultData } from "@/api/interface";
-import { ResultEnum } from "@/enums/httpEnum";
+import { ResultEnum } from "./commons/consts";
 import { checkStatus } from "./commons/checkStatus";
 import { AxiosCanceler } from "./commons/axiosCancel";
 import { setToken } from "@/store/modules/global";

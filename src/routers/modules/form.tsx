@@ -1,12 +1,12 @@
 import React from "react";
 import lazyLoad from "@/routers/utils/lazyLoad";
-import { LayoutIndex } from "@/routers/constant";
+import Layout from "@/layouts/index";
 import { RouteObject } from "@/routers/interface";
 
 // 表单 Form 模块
 const formRouter: Array<RouteObject> = [
 	{
-		element: <LayoutIndex />,
+		element: <Layout />,
 		meta: {
 			title: "表单 Form"
 		},
