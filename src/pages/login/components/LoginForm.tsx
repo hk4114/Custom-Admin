@@ -10,6 +10,7 @@ import { loginApi } from "@api/login";
 import { HOME_URL } from "@/config/config";
 import { setTabsList } from "@/store/modules/tabs";
 import { setToken } from "@/store/modules/global";
+import { tokenSet } from "@utils/auth";
 import { useDispatch } from "@/store";
 
 const LoginForm = () => {
@@ -25,6 +26,7 @@ const LoginForm = () => {
 			setLoading(true);
 			loginForm.password = md5(loginForm.password);
 			const { data } = await loginApi(loginForm);
+			tokenSet(data!.access_token);
 			dispatch(setToken(data!.access_token));
 			dispatch(setTabsList([]));
 			message.success("登录成功！");

@@ -12,15 +12,6 @@ const dashboardRouter: Array<RouteObject> = [
 		},
 		children: [
 			{
-				path: "/dashboard/dataVisualize",
-				element: lazyLoad(React.lazy(() => import("@/pages/dashboard/dataVisualize/index"))),
-				meta: {
-					requiresAuth: true,
-					title: "数据可视化",
-					key: "dataVisualize"
-				}
-			},
-			{
 				path: "/dashboard/embedded",
 				element: lazyLoad(React.lazy(() => import("@/pages/dashboard/embedded/index"))),
 				meta: {

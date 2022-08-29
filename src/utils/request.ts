@@ -8,6 +8,7 @@ import { checkStatus } from "./commons/checkStatus";
 import { AxiosCanceler } from "./commons/axiosCancel";
 import { setToken } from "@/store/modules/global";
 import { store } from "@/store";
+import { tokenGet, tokenSet } from "./auth";
 
 const axiosCanceler = new AxiosCanceler();
 
@@ -39,7 +40,7 @@ class RequestHttp {
 				axiosCanceler.addPending(config);
 				// * 如果当前请求不需要显示 loading,在api服务中通过指定的第三个参数: { headers: { noLoading: true } }来控制不显示loading，参见loginApi
 				config.headers!.noLoading || showFullScreenLoading();
-				const token: string = store.getState().global.token;
+				const token: string | undefined = tokenGet();
 				return { ...config, headers: { ...config.headers, "x-access-token": token } };
 			},
 			(error: AxiosError) => {
@@ -61,6 +62,7 @@ class RequestHttp {
 				// * 登录失效（code == 599）
 				if (data.code == ResultEnum.OVERDUE) {
 					store.dispatch(setToken(""));
+					tokenSet("");
 					message.error(data.msg);
 					window.location.hash = "/login";
 					return Promise.reject(data);
