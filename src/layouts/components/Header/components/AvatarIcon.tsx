@@ -69,7 +69,14 @@ const AvatarIcon = () => {
 	return (
 		<>
 			<Dropdown overlay={menu} placement="bottom" arrow trigger={["click"]}>
-				<Avatar size="large" icon={<UserOutlined />} />
+				<Avatar
+					size="large"
+					icon={
+						<div className="w100 h100">
+							<UserOutlined />
+						</div>
+					}
+				/>
 			</Dropdown>
 			<InfoModal innerRef={infoRef}></InfoModal>
 			<PasswordModal innerRef={passRef}></PasswordModal>
