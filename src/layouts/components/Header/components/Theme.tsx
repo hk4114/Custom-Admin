@@ -1,8 +1,9 @@
-import { Drawer, Divider, Switch, message } from "antd";
+import { Drawer, Divider, Switch } from "antd";
 import { useState } from "react";
 import { RootState, useDispatch, useSelector } from "@/store";
 import { FireOutlined } from "@ant-design/icons";
 import { setWeakOrGray } from "@/store/modules/global";
+import SwitchDark from "@/layouts/components/Header/components/SwitchDark";
 
 const Theme = () => {
 	const dispatch = useDispatch();
@@ -36,14 +37,8 @@ const Theme = () => {
 					全局主题
 				</Divider>
 				<div className="theme-item">
-					<span>暗黑模式（未完成）</span>
-					<Switch
-						checkedChildren={<>🌞</>}
-						unCheckedChildren={<>🌜</>}
-						onChange={() => {
-							message.success("欢迎提交 pull request ✨");
-						}}
-					/>
+					<span>暗黑模式</span>
+					<SwitchDark />
 				</div>
 				<div className="theme-item">
 					<span>灰色模式</span>
