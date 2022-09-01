@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Table, DatePicker, Button, Space } from "antd";
 import useAuthButtons from "@/hooks/useAuthButtons";
 import { getAuthorButtons } from "@api/login";
@@ -13,10 +12,6 @@ const DataScreen = () => {
 		const res = await getAuthorButtons();
 		console.log(res);
 	};
-
-	useEffect(() => {
-		console.log(BUTTONS);
-	}, []);
 
 	const dataSource = [
 		{
