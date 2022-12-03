@@ -65,6 +65,7 @@ body {
 	/* 提升移动端滚动的体验效果  */
 	/* overflow-scrolling: touch; */
 	-webkit-overflow-scrolling: touch;
+	width: 100%;
 	height: 100%;
 }
 
@@ -77,6 +78,7 @@ body {
 	/* 使字体更加顺滑 */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	line-height: 1;
 }
 
 center,
@@ -146,10 +148,6 @@ section {
 	display: block;
 }
 
-body {
-	line-height: 1;
-}
-
 ol,
 ul {
 	list-style: none;
@@ -189,16 +187,9 @@ input[type="search"] {
 	box-sizing: content-box;
 }
 
-textarea {
-	overflow: auto;
-	vertical-align: top;
-	resize: vertical;
-}
-
 /**
  * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
-
 audio,
 canvas,
 video {
@@ -212,7 +203,6 @@ video {
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-
 audio:not([controls]) {
 	display: none;
 	height: 0;
@@ -233,20 +223,15 @@ audio:not([controls]) {
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-
 html {
 	font-size: 100%;
-	/* 1 */
 	-webkit-text-size-adjust: 100%;
-	/* 2 */
 	-ms-text-size-adjust: 100%;
-	/* 2 */
 }
 
 /**
  * Address `outline` inconsistency between Chrome and other browsers.
  */
-
 a:focus {
 	outline: thin dotted;
 }
@@ -254,7 +239,6 @@ a:focus {
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-
 a:active,
 a:hover {
 	outline: 0;
@@ -264,18 +248,15 @@ a:hover {
  * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
  * 2. Improve image quality when scaled in IE 7.
  */
-
 img {
 	border: 0;
-	/* 1 */
 	-ms-interpolation-mode: bicubic;
-	/* 2 */
+	vertical-align: middle;
 }
 
 /**
  * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
  */
-
 figure {
 	margin: 0;
 }
@@ -283,7 +264,6 @@ figure {
 /**
  * Correct margin displayed oddly in IE 6/7.
  */
-
 form {
 	margin: 0;
 }
@@ -291,11 +271,10 @@ form {
 /**
  * Define consistent border, margin, and padding.
  */
-
 fieldset {
-	border: 1px solid #c0c0c0;
+	border: 0;
 	margin: 0 2px;
-	padding: 0.35em 0.625em 0.75em;
+	padding: 0;
 }
 
 /**
@@ -303,15 +282,11 @@ fieldset {
  * 2. Correct text not wrapping in Firefox 3.
  * 3. Correct alignment displayed oddly in IE 6/7.
  */
-
 legend {
 	border: 0;
-	/* 1 */
 	padding: 0;
 	white-space: normal;
-	/* 2 */
 	*margin-left: -7px;
-	/* 3 */
 }
 
 /**
@@ -320,26 +295,20 @@ legend {
  *    and Chrome.
  * 3. Improve appearance and consistency in all browsers.
  */
-
 button,
 input,
 select,
 textarea {
 	font-size: 100%;
-	/* 1 */
 	margin: 0;
-	/* 2 */
 	vertical-align: baseline;
-	/* 3 */
 	*vertical-align: middle;
-	/* 3 */
 }
 
 /**
  * Address Firefox 3+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-
 button,
 input {
 	line-height: normal;
@@ -351,7 +320,6 @@ input {
  * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
  * Correct `select` style inheritance in Firefox 4+ and Opera.
  */
-
 button,
 select {
 	text-transform: none;
@@ -366,18 +334,13 @@ select {
  * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
-
 button,
 html input[type="button"],
-/* 1 */
 input[type="reset"],
 input[type="submit"] {
 	-webkit-appearance: button;
-	/* 2 */
 	cursor: pointer;
-	/* 3 */
 	*overflow: visible;
-	/* 4 */
 }
 
 /* 取消部分浏览器数字输入控件的操作按钮 apperance可以改变控件的外观。 */
@@ -405,7 +368,6 @@ button::-moz-focus-inner,
 /**
  * Re-set default cursor for disabled elements.
  */
-
 button[disabled],
 html input[disabled] {
 	cursor: default;
@@ -417,17 +379,12 @@ html input[disabled] {
  * 3. Remove excess padding in IE 7.
  *    Known issue: excess padding remains in IE 6.
  */
-
 input[type="checkbox"],
 input[type="radio"] {
 	box-sizing: border-box;
-	/* 1 */
 	padding: 0;
-	/* 2 */
 	*height: 13px;
-	/* 3 */
 	*width: 13px;
-	/* 3 */
 }
 
 /**
@@ -435,13 +392,10 @@ input[type="radio"] {
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-
 input[type="search"] {
 	-webkit-appearance: textfield;
-	/* 1 */
 	-moz-box-sizing: content-box;
 	-webkit-box-sizing: content-box;
-	/* 2 */
 	box-sizing: content-box;
 }
 
@@ -449,7 +403,6 @@ input[type="search"] {
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;
@@ -458,7 +411,6 @@ input[type="search"]::-webkit-search-decoration {
 /**
  * Remove inner padding and border in Firefox 3+.
  */
-
 button::-moz-focus-inner,
 input::-moz-focus-inner {
 	border: 0;
@@ -469,21 +421,10 @@ input::-moz-focus-inner {
  * 1. Remove default vertical scrollbar in IE 6/7/8/9.
  * 2. Improve readability and alignment in all browsers.
  */
-
 textarea {
 	overflow: auto;
-	/* 1 */
 	vertical-align: top;
-	/* 2 */
-}
-
-/**
- * Remove most spacing between table cells.
- */
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+	resize: vertical;
 }
 
 html,
@@ -504,20 +445,6 @@ textarea {
 	text-shadow: none;
 }
 
-img {
-	vertical-align: middle;
-}
-
-fieldset {
-	border: 0;
-	margin: 0;
-	padding: 0;
-}
-
-textarea {
-	resize: vertical;
-}
-
 .chromeframe {
 	margin: 0.2em 0;
 	background: #ccc;
@@ -535,11 +462,4 @@ textarea {
 template {
 	/* 有些浏览器会显示template 不过template标签用的也少，自行取舍。 */
 	display: none;
-}
-
-html,
-body,
-#root {
-	width: 100%;
-	height: 100%;
 }
